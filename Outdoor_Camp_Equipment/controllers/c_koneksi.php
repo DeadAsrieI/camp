@@ -1,18 +1,16 @@
-<?php
-class C_koneksi{
-    public function conn(){
-        $conn = mysqli_connect('localhost', 'root', '', 'camp');
-    
-        if (!$conn){
+<?php 
+
+class c_koneksi {
+
+    public function conn() {
+        $conn = mysqli_connect("localhost", "root", "", "camp");
+        return $conn;
+
+        if (!$conn) {
             die("koneksi gagal: " . mysqli_connect_error());
-        } else{
-            echo "koneksi ke database berhasil";
+        } else {
+            echo "<script> alert('koneksi databse berhasil');
+            </script>";
         }
     }
-
 }
-
-$conn = new C_koneksi();
-$conn->conn();
-
-?>
